@@ -39,5 +39,6 @@
   },
   "_source": "https://github.com/mattlewis92/angular-bootstrap-calendar.git",
   "_target": "^0.20.2",
-  "_originalSource": "angular-bootstrap-calendar"
+  "_originalSource": "angular-bootstrap-calendar",
+  "_direct": true
 }

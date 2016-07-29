@@ -62,7 +62,7 @@
             base: {
                 accept        : null,
                 actionChecker : null,
-                styleCursor   : true,
+                styleCursor   : false,
                 preventDefault: 'auto',
                 origin        : { x: 0, y: 0 },
                 deltaSource   : 'page',
