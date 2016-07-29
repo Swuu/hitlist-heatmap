@@ -1,0 +1,46 @@
+schemaVersion: 2.0
+
+name: hitlist-heatmap
+category: itunes
+users:
+  - stephenwu2
+notificationRecipients:
+  - stephenwu@apple.com 
+builds:
+  - branchName: dev
+    timeout: 40
+    machine:
+      docker:
+        baseImage: registry.is.apple.com/its/its-base:latest
+    build:
+      template: freestyle:v1:merge
+      steps:
+        - CI=true npm install
+        - grunt ci --branch=master --type=app --env=qa
+        - grunt writeBuildResults
+    publish:
+      reports:
+        junit: false
+    finally:
+      merge:
+        remote: origin
+        target: master
+
+  - branchName: release
+    timeout: 40
+    machine:
+      docker:
+        baseImage: registry.is.apple.com/its/its-base:latest
+    build:
+      template: freestyle:v1:merge
+      steps:
+        - CI=true npm install
+        - grunt ci --branch=master --type=app --env=prod
+        - grunt writeBuildResults
+    publish:
+      reports:
+        junit: false
+    finally:
+      merge:
+        remote: origin
+        target: master
