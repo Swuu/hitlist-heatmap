@@ -37,6 +37,7 @@
       <div class="col-md-2"></div>
       <div class="row">
         <div class="col-md-8">
+          <!-- PREVIOUS, TITLE, NEXT BUTTONS -->
           <div class="text-center">
               <button
                 class="btn btn-default"
@@ -65,6 +66,8 @@
 
 
           <div class="text-center">
+
+          <!-- CATEGORY FILTER -->
             <select id="genre" multiple="multiple">
                 <optgroup label="Games">
                     <option value="1-1" selected="selected">Action</option>
@@ -104,6 +107,7 @@
                 </optgroup>
             </select>
 
+            <!-- PLATFORM FILTER -->
             <select id="platform" multiple="multiple">
                 <option value="7-1" selected="selected">iPhone</option>
                 <option value="7-3">iPad</option>
@@ -112,16 +116,20 @@
                 <option value="7-4">Mac</option>
             </select>
 
+            <!-- NEW//UPDATE FILTER -->
             <select id="newupdate" multiple="multiple">
                 <option value="7-1" selected="selected">New</option>
                 <option value="7-2">Update</option>
             </select>
 
+            <!-- TRACKING PRIORITY SLIDER -->
             &nbsp &nbsp &nbsp &nbsp &nbsp
             <div style="display: inline-block">
               Tracking Priority<br>
               <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="1" data-slider-value="0"/>
             </div>
+
+            <!-- FEATURING PRIORITY SLIDER -->
             &nbsp &nbsp &nbsp &nbsp &nbsp
             <div style="display: inline-block">
               Featuring Priority<br>
@@ -131,6 +139,7 @@
 
     <br>
     
+    <!-- HEATMAP CALENDAR -->
     <div>
       <mwl-calendar
           view="main.calendarView"
@@ -145,9 +154,10 @@
           on-view-change-click="false">
       </mwl-calendar>
     </div>
-
     <div>
     <br><br><br>
+
+    <!-- TENTATIVE RELEASES -->
     <h3><center>Tentative Releases in {{ calendarTitle }}</center></h3>
       <table class="table table-bordered">
           <tr ng-repeat="event in main.tentative track by $index">
@@ -164,12 +174,12 @@
           </tr>
       </table>
     </div>
-
         </div>
         <div class="col-md-2"></div>
       </div>
     </div>
   
+    <!-- MODAL FOR INDIVIDUAL EVENT -->
     <script type="text/ng-template" id="modalContent.html">
       <div class="modal-header">
         <h3 class="modal-title">{{ main.event.title }}</h3>
@@ -219,7 +229,7 @@
     </script>
 
     <script src="bower_components/moment/min/moment.min.js"></script>
-    <script src="bower_components/interact/dist/interact.js"></script> <!-- this messes up the mouse symbol -->
+    <script src="bower_components/interact/dist/interact.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
